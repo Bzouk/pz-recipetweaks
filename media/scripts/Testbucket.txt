@@ -1,0 +1,53 @@
+/* Module name=file:mod.info id */
+/* Can overwrite items */
+/* Not working for recipes */
+module Hydrocraft
+{
+item HCWoodenbucketvegoil
+    {
+        Weight    		= 4,
+        Type = Food,
+        CantBeFrozen = TRUE,
+        UseDelta	=	0.04,
+		EvolvedRecipe = Sandwich:2;Sandwich Baguette:2;Burger:2;RicePot:2;RicePan:2;PastaPot:2;PastaPan:2;Stir fry Griddle Pan:2;Stir fry:2;Salad:2;Roasted Vegetables:2;Taco:2;Burrito:2;Soup:5;Stew:5,
+		HungerChange = -30,
+		UnhappyChange = 50,
+		Calories = 2120,
+		Carbohydrates = 0,
+		Lipids = 130,
+		Proteins = 0,
+        DisplayName         	= Wooden Bucket with Vegetable Oil Bzouk,
+        Icon 			= HCWoodenbucketvegoil,
+        ReplaceOnDeplete = HCWoodenbucket,
+		Tags = BakingFat;Oil,
+		FoodType = Oil,
+	    DisplayCategory	=   CraftChem,
+	    Override: true,/* probably not needed */
+    }
+}
+
+module BzRecipetweaks
+{
+    imports
+    {
+        Base
+        Hydrocraft
+    }
+	item DogfoodKuba
+	{
+		DisplayName = Dog Food,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.8,
+		Icon = Dogfood,
+		CannedFood = TRUE,
+		CantEat = TRUE,
+		Packaged = TRUE,
+		Calories = 498,
+		Carbohydrates = 77.56,
+		Lipids = 12.58,
+		Proteins = 16.04,
+		WorldStaticModel = CanClosedDogFood,
+		Tags = HasMetal,
+	}
+}
